@@ -1,0 +1,26 @@
+{
+  "name": "mern-backend",
+  "version": "1.0.0",
+  "description": "A Mern App with backend and Frontend ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suman-saket/MERN-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suman-saket/MERN-Backend/issues"
+  },
+  "homepage": "https://github.com/suman-saket/MERN-Backend#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.2"
+  }
+}
