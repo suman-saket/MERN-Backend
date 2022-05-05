@@ -7,14 +7,16 @@ const {
   deleteGoal,
 } = require("../controller/goalController");
 
-router.get("/", getGoals);
-router.post("/", setGoal);
+const { protect } = require("../middleware/authMiddleware");
 
-//router.route('/').get(getGoals).post(setGoals);   //Alternate way- Above 2 same route can be wriiten in this way by chaining.It save a line of code
+router.get("/", protect, getGoals);
+router.post("/", protect, setGoal);
 
-router.put("/:id", updateGoal);
-router.delete("/:id", deleteGoal);
+//router.route('/').get(protect,getGoals).post(protect,setGoals);   //Alternate way- Above 2 same route can be wriiten in this way by chaining.It save a line of code
 
-//router.route('/:id').put(updateGoal).delete(deleteGoal);   //Alternate way- Above 2 same route can be wriiten in this way by chaining
+router.put("/:id", protect, updateGoal);
+router.delete("/:id", protect, deleteGoal);
+
+//router.route('/:id').put(protect,updateGoal).delete(protect,deleteGoal);   //Alternate way- Above 2 same route can be wriiten in this way by chaining
 
 module.exports = router;
